@@ -20,7 +20,18 @@ config.ssh.paranoid = true
 			ansible.playbook = "playbook.yml"
 			ansible.inventory_path = "inventory"
 			ansible.sudo = true
-			ansible.verbose = "vvv"
+#			ansible.verbose = "vvv"
 			end
 		end
-	end
+	
+# Web server.
+config.vm.define "webs" do |webs|
+webs.vm.hostname = "webs"
+webs.vm.network :private_network, ip: "192.168.9.91"
+webs.vm.provision :ansible do |ansible|
+ansible.playbook = "web/playbook.yml"
+ansible.inventory_path = "web/inventory"
+ansible.sudo = true
+end
+end
+end
