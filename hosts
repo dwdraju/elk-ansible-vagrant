@@ -1,4 +1,4 @@
 [elk]
-192.168.9.90 ansible_connection=ssh ansible_user=vagrant
+127.0.0.1 ansible_connection=ssh
 [webs]
-192.168.9.91 ansible_connection=ssh ansible_user=vagrant
+127.0.0.1 ansible_connection=ssh
